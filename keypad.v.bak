@@ -1,0 +1,14 @@
+module keypad (clk,key,seg);
+
+	input clk;
+	input [7:0] key;
+	output [7:0] seg;
+	
+	wire [7:0] seg;
+	
+	wire [3:0] decoded;
+	
+	decode D1 (clk, key[7:4], key[3:0] ,decoded);
+	display D2 (decoded,seg);
+	
+	endmodule
